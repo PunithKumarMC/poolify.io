@@ -1,0 +1,18 @@
+#server:
+#  port: 1112
+#  error:
+#    include-message: always
+#spring:
+#  application:
+#    name: user-registration-service
+#  data:
+#    mongodb:
+#      database: registerDbMongo
+#      uri: mongodb://localhost:27017/registerdbmongo
+#
+#eureka:
+#  client:
+#    serviceUrl:
+#      defaultZone: http://localhost:8761/eureka
+#    fetchRegistry: true
+#    registerWithEureka: true

@@ -1,0 +1,15 @@
+server:
+  port: 8085
+spring:
+  data:
+    mongodb:
+      uri: ${MONGO_URI:mongodb://localhost:27017/bookinghistory}
+  application:
+    name: booked-history
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    serverUrl:
+      defaultZone: http://localhost:8761/eureka

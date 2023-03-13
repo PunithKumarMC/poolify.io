@@ -1,0 +1,13 @@
+server:
+  port: 7632
+  error:
+    include-message: always
+spring:
+  application:
+    name: payment-wallet
+  data:
+    mongodb:
+      database: walletDbMongo
+#      uri: mongodb://localhost:27017/walletDbMongo
+      uri: ${MONGO_URI:mongodb://localhost:27017/walletDbMongo}
+

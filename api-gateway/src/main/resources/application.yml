@@ -1,0 +1,121 @@
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+    register-with-eureka: true
+    fetch-registry: true
+
+server:
+  port: 8080
+ribbon:
+  ReadTimeout: 60000
+
+
+
+spring:
+  application:
+    name: "api-gateway"
+  cloud:
+    gateway:
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            allowedOrigins: "*"
+            allowedMethods: "*"
+            allowedHeaders: "*"
+            exposedHeaders: "*"
+      routes:
+
+
+
+        - id: user-authentication-service
+          uri: lb://user-authentication-service
+          predicates:
+            - Path=/user-authentication-service/**
+          filters:
+            - RewritePath=/user-authentication-service(?<segment>/?.*), $\{segment}
+
+
+        - id: user-registration-service
+          uri: lb://user-registration-service
+          predicates:
+            - Path=/user-registration-service/**
+          filters:
+            - RewritePath=/user-registration-service(?<segment>/?.*), $\{segment}
+
+
+        - id: user-booking-service
+          uri: lb://user-booking-service
+          predicates:
+            - Path=/user-booking-service/**
+          filters:
+            - RewritePath=/user-booking-service(?<segment>/?.*), $\{segment}
+
+
+
+        - id: ride-finished-notification
+          uri: lb://ride-finished-notification
+          predicates:
+            - Path=/ride-finished-notification/**
+          filters:
+            - RewritePath=/ride-finished-notification(?<segment>/?.*), $\{segment}
+
+
+
+        - id: email-service
+          uri: lb://email-service
+          predicates:
+            - Path=/email-service/**
+          filters:
+            - RewritePath=/email-service(?<segment>/?.*), $\{segment}
+
+
+        - id: booked-history
+          uri: lb://booked-history
+          predicates:
+            - Path=/booked-history/**
+          filters:
+            - RewritePath=/booked-history(?<segment>/?.*), $\{segment}
+
+        - id: payment-wallet
+          uri: lb://payment-wallet
+          predicates:
+            - Path=/payment-wallet/**
+          filters:
+            - RewritePath=/payment-wallet(?<segment>/?.*), $\{segment}
+
+
+
+        - id: payment-gateway
+          uri: lb://payment-gateway
+          predicates:
+            - Path=/payment-gateway/**
+          filters:
+            - RewritePath=/payment-gateway(?<segment>/?.*), $\{segment}
+
+
+        - id: product-webapp
+          uri: lb://product-webapp
+          predicates:
+            - Path=/**
+          filters:
+            - RewritePath=(?<segment>/?.*), $\{segment}
+
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always
+    metrics:
+      enabled: true
+    prometheus:
+      enabled: true
+  metrics:
+    export:
+      prometheus:
+        enabled: true
+

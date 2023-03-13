@@ -1,0 +1,13 @@
+server:
+  port: 8998
+  error:
+    include-message: always
+spring:
+  application:
+    name: ride-finished-notification
+  data:
+    mongodb:
+      database: DriverPassengerMapping
+#      uri: mongodb://localhost:27017/DriverPassengerMapping
+      uri: ${MONGO_URI:mongodb://localhost:27017/DriverPassengerMapping}
+

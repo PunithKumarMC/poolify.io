@@ -1,0 +1,22 @@
+server:
+  port: 8081
+  error:
+    include-message: always
+spring:
+  application:
+    name: user-booking-service
+  #  data:
+  #    mongodb:
+  #      database: registerDbMongo
+  #      uri: mongodb://localhost:27017/testdb
+  data:
+    mongodb:
+      uri: ${MONGO_URI:mongodb://localhost:27017/testdb}
+
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka
+    fetchRegistry: true
+    registerWithEureka: true
