@@ -1,0 +1,185 @@
+
+/* table {
+    width: 99%;
+  }
+  th{
+    font-size: large;
+  }
+  td{
+    font-size: large;
+
+  } */
+
+
+.car{
+ background-color: #99fddf;
+ height: 240px;
+ /* margin-left:30px ; */
+ width: 100%;
+ 
+}
+.car p{
+    margin-right: 100px;
+  float: right;
+  text-align: left;
+  margin-top: 40px;
+  
+  }
+
+.vector{
+ 
+    margin-left: 100px;
+    height:260px;
+    width: 400px;
+    float: left;
+    }
+    .ordering{
+        font-weight: medium;
+        font-size: 15px;
+        color: #87898a;
+      
+      }
+      .learn{
+        clear: right;
+        float: right;
+        border-radius: 20px;
+        border:solid;
+        border-color:#63c8ab ;
+        color:#08b783 ;
+        background-color: transparent;
+        padding: 10px;
+        margin-right: 200px;
+        margin-top: 40px;
+      }
+      .fast{
+        font-weight: bolder;
+        font-size: 30px;
+        color: #08b783;
+        margin-left: 10px;
+      
+      }
+
+
+      table {
+        width: 100%;
+        background-color: #718c9a;
+      }
+      table thead tr {
+        background: #013317 url('/Global/Images/parchment-bkg.jpg') repeat;
+      }
+      table thead tr.Vertical {
+        background-image: url('/Global/Images/parchment-bkg-rotated.jpg');
+      }
+      table thead tr h1,
+      table thead tr h2,
+      table thead tr .h1,
+      table thead tr .h2,
+      table thead tr h3,
+      table thead tr .h3,
+      table thead tr h4,
+      table thead tr .h4 {
+        color: #c8c3c3;
+      }
+      table thead tr a {
+        color: #00a0f0;
+      }
+      table thead tr a:hover,
+      table thead tr a:focus {
+        color: white;
+      }
+      table tbody tr:nth-of-type(even) {
+        background: #8598a8;
+      }
+      table td,
+      table th {
+        padding: 8px 14px;
+        text-align: left;
+        font-size: 1.2rem;
+      }
+      table td a,
+      table th a {
+        font-weight: bolder;
+        color: #00918A !important;
+      }
+      table td a:hover,
+      table th a:hover,
+      table td a:focus,
+      table th a:focus {
+        color: rgb(0, 0, 0) !important;
+      }
+      table th {
+        font-weight: 700;
+        font-size: 1.1rem;
+        line-height: 1.4;
+        font-family: "Gotham SSm A", "Gotham SSm B", Helvetica, sans-serif;
+        text-transform: uppercase;
+        margin: 0;
+        max-width: 800px;
+        line-height: inherit;
+        color: #ffffff;
+      }
+      table th.PrimaryFont {
+        text-transform: none;
+      }
+      @media only screen and (max-width: 599px) {
+        table th {
+          display: none;
+        }
+        table td {
+          position: relative;
+          display: block;
+          padding-left: 110px;
+        }
+        table td:before {
+          position: absolute;
+          top: 8px;
+          left: 10px;
+          display: block;
+          content: attr(data-label) ": ";
+          font-weight: 700;
+        }
+        table tbody tr {
+          padding: 20px 0;
+          display: block;
+        }
+        table:nth-of-type(odd) {
+          background: #003506;
+        }
+      }
+      /* For display in CodePen */
+      body { padding: 20px; }
+      table { border-collapse: collapse; }
+
+      th, td {
+        border: 1px solid ;
+        border-radius: 10px;
+        
+      }
+
+      td{
+        color: #000000 !important;
+        font-weight: bold;
+        letter-spacing: 1px;
+      }
+
+      .body{
+        overflow: hidden;
+      }
+
+      .scroll{
+        max-height: 300px;
+        overflow-y: scroll;
+        
+      }
+      ::-webkit-scrollbar {
+        width: 0;  
+        background: transparent; 
+      }
+
+
+      .image{
+        position: fixed;
+        left: 0px;
+        height: 100px;
+        width: 100px;
+      }

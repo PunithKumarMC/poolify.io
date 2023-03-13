@@ -1,0 +1,141 @@
+<div style="position: fixed; width: 100%">
+  <div style="display: inline; height: 0px; position: absolute">
+    <img
+      src="./../assets/caaeaae00b5c49ddb022b25ff3548cc5__5_-removebg-preview.png"
+      alt="logo"
+      style="margin-top: -110px; width: 300px; margin-left: 5%"
+    />
+  </div>
+  <div>
+    <img
+      style="height: 800px; width: 50%; margin-top: -25px"
+      src="../../assets/RegisterImg.jpg"
+      alt="imgonline-com-ua-ReplaceColor-Em0ppYM0LcedN"
+    />
+  </div>
+  <div style="margin-left: 60%; margin-top: -42%">
+    <span
+      ><h1
+        style="
+          font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial,
+            sans-serif;
+          font-size: 40px;
+        "
+      >
+        Sign up !
+      </h1></span
+    ><br />
+    <!-- <span>
+      <a href="/@{/oauth2/authorization/google}"><img
+        src="../../assets/google_logo.png"
+        style="height: 40px; margin-left: 90px"
+      /></a>
+    </span> -->
+    <br />
+    <form [formGroup]="registerform" style="margin-right: 0px">
+      <div class="form-group" style="margin-right: 30%">
+        <input
+        type="email"
+        class="form-control"
+        id="exampleInputEmail1"
+        aria-describedby="emailHelp"
+        placeholder="Enter email"
+        formControlName="email"
+        style="
+          border-style: solid;
+          border-color: #0fb081;
+          border-width: 1px;
+          height: 50px;
+        "
+      />
+      <small id="emailHelp" class="form-text text-muted"
+      >We'll never share your email with anyone else.</small
+    >
+      </div>
+      <div *ngIf="registerform.controls['email'].hasError('pattern')">
+        invalid format
+      </div>
+
+      <div class="form-group" style="margin-right: 30%;margin-top: 10px;">
+        <input
+          type="password"
+          class="form-control"
+          id="exampleInputPassword1"
+          placeholder="Password"
+          formControlName="password"
+          style="
+            border-style: solid;
+            border-color: #0fb081;
+            border-width: 1px;
+            height: 50px;
+          "
+        />
+      </div>
+      <div *ngIf="registerform.controls['password'].hasError('minlength')">
+        password min length Required i.e 6
+      </div>
+      <div *ngIf="registerform.controls['password'].hasError('maxlength')">
+        password max length Required i.e 12
+      </div>
+
+      <div class="form-group" style="margin-right: 30%;margin-top: 30px;">
+        <input
+          type="password"
+          class="form-control"
+          id="exampleInputPassword"
+          aria-describedby="ConfirmPasswordHelp"
+          placeholder="Confirm password"
+          formControlName="confirmPassword"
+          
+          style="
+            border-style: solid;
+            border-color: #0fb081;
+            border-width: 1px;
+            height: 50px;
+          "
+        /></div>
+        <div
+        *ngIf="
+          !(
+            registerform.value.password === registerform.value.confirmPassword
+          )
+        "
+      >
+        <small id="emailHelp" class="form-text text-muted"
+          >please enter same password as above</small
+        >
+      </div>
+      <br />
+      <br />
+      <button
+        type="submit"
+        class="btn btn-primary"
+        style="
+          width: 70%;
+          background-color: #0fb081;
+          height: 50px;
+          font-weight: bold;
+          font-size: 20px;
+          font-family: sans-serif;
+          margin-top: -20px;
+        "
+        [disabled]="!(registerform.value.password === registerform.value.confirmPassword)||
+        registerform.value.email === '' ||
+        registerform.value.password === '' "
+        (click)="registerNow()"
+        >Register</button
+      >
+      <div style="font-weight:bolder;color:rgb(182, 46, 46)">{{this.msg}}</div>
+</form>
+<br />
+    <span
+      ><a
+        routerLink="/login"
+        routerLinkActive="active"
+        ariaCurrentWhenActive="page"
+        style="margin-left: 80px; font-size: 20px"
+        >Already have an account? Login!</a
+      ></span
+    >
+  </div>
+</div>

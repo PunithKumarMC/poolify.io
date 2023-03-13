@@ -1,0 +1,223 @@
+/* main {
+    padding: 1rem;
+  }
+  
+  .rating {
+    display: flex;
+    align-items: center;
+  }
+  
+  .rating span {
+    width: 10rem;
+  }
+  
+  .dense {
+    margin: 0 0.5rem;
+  } */
+
+
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+ 
+}
+.body{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* min-height: 100vh; */
+  background-image:linear-gradient(to right,#08b783 50%, #298096 100%) ;
+  font-weight: bolder;
+}
+.wrapper{
+  /* background: linear-gradient(15deg, #09553e 60%, #0f2e35 20%); */
+background-color: transparent;
+  max-width: 360px;
+  width: 330px;
+ border: none;
+
+}
+.wrapper .content{
+  padding: 30px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.wrapper .outer{
+  height: 135px;
+  width: 135px;
+  overflow: hidden;
+}
+.outer .emojis{
+  height: 500%;
+  display: flex;
+  flex-direction: column;
+}
+.outer .emojis li{
+  height: 20%;
+  width: 100%;
+  list-style: none;
+  transition: all 0.3s ease;
+}
+.outer li img{
+  height: 100%;
+  width: 100%;
+}
+
+
+#star-2:checked ~ .content .emojis .slideImg{
+  margin-top: -135px;
+}
+#star-3:checked ~ .content .emojis .slideImg{
+  margin-top: -270px;
+}
+#star-4:checked ~ .content .emojis .slideImg{
+  margin-top: -405px;
+}
+#star-5:checked ~ .content .emojis .slideImg{
+  margin-top: -540px;
+}
+.wrapper .stars{
+  margin-top: 20px;
+}
+.stars{
+  font-size: 30px;
+  margin: 0 3px;
+  color: #ccc;
+}
+
+.btn{
+  height: 50px;
+  width: 100%;
+  margin: 2px 0;
+}
+ .btn button{
+  height: 100%;
+  width: 100%;
+  border: 1px solid rgb(3, 3, 3);
+  border-radius: 5px;
+  outline: none;
+  background: rgb(230, 180, 80);
+  color: rgb(0, 0, 0);
+  font-size: 22px;
+  
+  font-weight: 500;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn button:hover{
+  background: rgb(211, 209, 204);
+}
+
+#star-1:hover ~ .content .stars .star-1,
+#star-1:checked ~ .content .stars .star-1,
+
+#star-2:hover ~ .content .stars .star-1,
+#star-2:hover ~ .content .stars .star-2,
+#star-2:checked ~ .content .stars .star-1,
+#star-2:checked ~ .content .stars .star-2,
+
+#star-3:hover ~ .content .stars .star-1,
+#star-3:hover ~ .content .stars .star-2,
+#star-3:hover ~ .content .stars .star-3,
+#star-3:checked ~ .content .stars .star-1,
+#star-3:checked ~ .content .stars .star-2,
+#star-3:checked ~ .content .stars .star-3,
+
+#star-4:hover ~ .content .stars .star-1,
+#star-4:hover ~ .content .stars .star-2,
+#star-4:hover ~ .content .stars .star-3,
+#star-4:hover ~ .content .stars .star-4,
+#star-4:checked ~ .content .stars .star-1,
+#star-4:checked ~ .content .stars .star-2,
+#star-4:checked ~ .content .stars .star-3,
+#star-4:checked ~ .content .stars .star-4,
+
+#star-5:hover ~ .content .stars .star-1,
+#star-5:hover ~ .content .stars .star-2,
+#star-5:hover ~ .content .stars .star-3,
+#star-5:hover ~ .content .stars .star-4,
+#star-5:hover ~ .content .stars .star-5,
+#star-5:checked ~ .content .stars .star-1,
+#star-5:checked ~ .content .stars .star-2,
+#star-5:checked ~ .content .stars .star-3,
+#star-5:checked ~ .content .stars .star-4,
+#star-5:checked ~ .content .stars .star-5{
+  color: #fd4;
+}
+.wrapper .footer{
+  border-top: 1px solid #ccc;
+  background: #f2f2f2;
+  width: 100%;
+  height: 55px;
+  padding: 0 20px;
+  border-radius: 0 0 10px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.footer span{
+  font-size: 17px;
+  font-weight: 400;
+}
+.footer .text::before{
+  content: "Rate your experience";
+}
+.footer .numb::before{
+  content: "0 out of 5";
+}
+#star-1:checked ~ .footer .text::before{
+  content: "I just hate it";
+}
+#star-1:checked ~ .footer .numb::before{
+  content: " 1 out of 5";
+}
+#star-2:checked ~ .footer .text::before{
+  content: "I don't like it";
+}
+#star-2:checked ~ .footer .numb::before{
+  content: "2 out of 5";
+}
+#star-3:checked ~ .footer .text::before{
+  content: "This is awesome";
+}
+#star-3:checked ~ .footer .numb::before{
+  content: "3 out of 5";
+}
+#star-4:checked ~ .footer .text::before{
+  content: "I just like it";
+}
+#star-4:checked ~ .footer .numb::before{
+  content: "4 out of 5";
+}
+#star-5:checked ~ .footer .text::before{
+  content: "I just love it";
+}
+#star-5:checked ~ .footer .numb::before{
+  content: "5 out of 5";
+}
+input[type="radio"]{
+  display: none;
+}
+
+
+
+#mainscreen{
+  /* background: linear-gradient(145deg, #08b783 50%, #298096 100%);
+  color: #0c5741;
+	border-radius: 1rem; */
+	background:linear-gradient(135deg, #01C278 0%, #D9D9D9 100%);
+  color: #0c5741;
+	border-radius: 1rem;
+	height: 70%;
+	width: 50%;
+	margin-right:0%;
+	position: fixed;
+	top: 15%;
+	left: 25%;
+}

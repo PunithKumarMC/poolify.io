@@ -1,0 +1,109 @@
+*,
+*::after,
+*::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+  height: 600px;
+}
+
+@mixin flex($justify, $align){
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+.side-nav{
+    position: relative;
+    top: 0;
+    left: 0;
+
+    &-list{
+        position: relative;
+        left: -100%;
+        top: 0;
+        width: 250px;
+        height: 100vh;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        background-color: #010101;
+        padding: 100px 15px 0;
+        transition: all 0.4s linear;
+    }
+
+    &-item{
+        display: block;
+        margin: 15px 0;
+        padding: 0;
+        text-align: center;
+    }
+
+    &-link{
+        display: inline-block;
+        text-decoration: none;
+        color: #fff;
+    }
+
+    .hamburger{
+        @include flex(center,center);
+        width: 38px;
+        height: 33px;
+        border: 1px solid #a5a5a5;
+        border-radius: 5px;
+        position: absolute;
+        top: 20px;
+        left: 20px; 
+        z-index: 99999999;
+        
+        .bar{
+          display: inline-block;
+          width: 28px;
+          height: 3px;
+          background-color: #949494;
+          position: relative;
+    
+          &:after,
+          &:before {
+            content: '';
+            position: absolute;
+            width: 28px;
+            height: 3px;
+            background-color: #949494;
+            top: -8px;
+            transition: all 0.4s linear;
+          }
+    
+          &:after{
+            top: 8px;
+          }
+        }//bar
+
+        &.close{
+
+            .bar{
+                height: 0;
+
+                &:after{
+                    top: -2px;
+                    background-color: #fff;
+                    transform: rotate(135deg);
+                }
+
+                &:before{
+                    top: -2px;
+                    background-color: #fff;
+                    transform: rotate(45deg);
+                }
+            }
+        }
+        
+    }//hambegure-menu
+}
+
+.slide-in{
+    left: 0;
+}

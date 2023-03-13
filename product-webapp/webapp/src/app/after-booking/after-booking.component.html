@@ -1,0 +1,188 @@
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Oxygen+Mono&display=swap');
+</style>
+<div style="background-color:rgb(206, 237, 237)">
+  <!-- <app-navbar></app-navbar> -->
+  <input type="text" id="txtSource" value={{fromPlace}}
+    style="width: 0.1px;height:0.1px;background-color:rgb(206, 237, 237);border-color: rgb(206, 237, 237);">
+  <input type="text" id="txtDestination" value={{toPlace}}
+    style="width: 0.1px;height: 0.1px;background-color:rgb(206, 237, 237);border-color: rgb(206, 237, 237);">
+  <div style="background-color: rgb(206, 237, 237);">
+
+    <mat-card class="example-card2">
+      <div>
+        <h1 style="text-align: center;">Hey {{userName}}, </h1>
+        <h2>You have Successfully booked the vehicle for ride, here are the few Details of your Booking. Please feel free to contact us.</h2>
+        <h3>***Click on map to get the directions</h3>
+        <h1>Thank you for choosing P-o-o-lify..... </h1>
+        <!-- <p>Please click on show routes button to view the route on map <button onclick="GetRoute()">Show Routes</button></p> -->
+        <!-- <mat-card>
+            <mat-card-title>Get an Email Reminder</mat-card-title>
+            <mat-form-field appearance="outline">
+                <input matInput placeholder="enter your Email Id">
+                
+              </mat-form-field>
+        </mat-card> -->
+      </div>
+
+    </mat-card>
+
+    <div style="margin-left:570px;">
+      <!-- <div class="maps" *ngIf="toggle" style="margin-top: 10px;">
+        <google-map  height="325px"
+            width="940px"> -->
+      <!-- [center]="center"
+            [zoom]="zoom"> -->
+      <!-- <map-directions-renderer *ngIf="(directionsResults$ | async) as directionsResults"
+                       [directions]="directionsResults"></map-directions-renderer>
+
+  </google-map> -->
+
+        <div id="dvMap" onclick="GetRoute()" style=" width: 900px; height: 310px;margin-left: 20px;">
+        </div>
+
+    
+
+    </div>
+    <!-- <button routerLink="/rating" style="background-color: rgb(77, 148, 77);margin-left: 200px;border-radius: 15px;width: 120px;">End Ride</button> -->
+
+    <!-- <div class="maps" *ngIf="!toggle" style="margin-top: 10px;">
+        <google-map height="325px"
+        width="940px"> -->
+    <!-- [center]="center"cd..
+      
+        [zoom]="zoom"> -->
+    <!-- <map-directions-renderer *ngIf="(directionsResults$ | async) as directionsResults"
+                       [directions]="directionsResults"></map-directions-renderer> -->
+
+    <!-- <map-traffic-layer [autoRefresh]="true"></map-traffic-layer> -->
+    <!-- </google-map> -->
+
+    <!-- <app-google-map-traffic></app-google-map-traffic> -->
+  </div>
+</div>
+<div style="background-color:rgb(206, 237, 237);float: left;margin-left:1px ;">
+  <img src="../../assets/7178884-removebg-preview.png" alt="car Image" style="float:left ;margin-top:-25px;margin-left:-40px;height: 350px;width: 630px;">
+</div>
+<mat-card class="example-card">
+  <mat-grid-list cols="3" rowHeight="3:1" >
+    <mat-grid-tile>
+      <mat-card class="example-card1">
+        <mat-card-header class="wrapper" >
+          <div mat-card-avatar class="example-header-image "></div>
+          <mat-card-title style="margin-top: 12px;color: #17262a; ">Booking Status: </mat-card-title>
+          <mat-card-content class="mat-card-content"style="margin-top: 35px;margin-left:-130px">Ride Confirmed</mat-card-content>
+          <!-- <mat-card-title>Confirmed</mat-card-title> -->
+        </mat-card-header>
+
+      </mat-card>
+    </mat-grid-tile>
+
+    <mat-grid-tile>
+      <mat-card class="example-card1">
+        <mat-card-header  class="wrapper">
+          <div mat-card-avatar class="example-header-image5 "></div>
+          <mat-card-title style="margin-top: 12px;color: #17262a; ">Pickup Location: </mat-card-title>
+          <mat-card-content class="mat-card-content" style="margin-top: 30px;margin-left:-157px">{{fromPlace}}</mat-card-content>
+        </mat-card-header>
+      </mat-card>
+    </mat-grid-tile>
+
+    <mat-grid-tile>
+      <mat-card class="example-card1" >
+        <mat-card-header class="wrapper">
+          <div mat-card-avatar class="example-header-image9 "></div>
+          <mat-card-title mat-card-title style="margin-top: 12px;color: #17262a; ">Driver contact:</mat-card-title>
+        <mat-card-content style="margin-top: 30px;margin-left:-60px"> {{phNo}} </mat-card-content> 
+        </mat-card-header>
+
+      </mat-card>
+
+    </mat-grid-tile>
+
+    <mat-grid-tile>
+      <mat-card class="example-card1" >
+        <mat-card-header class="wrapper">
+          <div mat-card-avatar class="example-header-image2 "></div>
+          <mat-card-title mat-card-title style="margin-top: 12px;color: #17262a; ">Vehicle Type:</mat-card-title>
+          <mat-card-content class="mat-card-content"style="margin-top: 30px;margin-left:-70px">{{vehicleType}}</mat-card-content>
+          <!-- <mat-card-title>4 Seater Sedan</mat-card-title> -->
+        </mat-card-header>
+      </mat-card>
+    </mat-grid-tile>
+    
+
+    <mat-grid-tile>
+      <mat-card class="example-card1" >
+        <mat-card-header class="wrapper">
+          <div mat-card-avatar class="example-header-image6 "></div>
+          <mat-card-title mat-card-title style="margin-top: 12px;color: #17262a; ">Drop Location: </mat-card-title>
+ 
+          <mat-card-content class="mat-card-content" style="margin-top: 30px;margin-left:-157px">{{toPlace}}</mat-card-content>
+        </mat-card-header>
+      </mat-card>
+    </mat-grid-tile>
+
+    <mat-grid-tile>
+      <mat-card class="example-card1" >
+        <mat-card-header class="wrapper">
+          <div mat-card-avatar class="example-header-image4 "></div>
+          <mat-card-title style="margin-top: 12px;color: #17262a; ">Estimated Price: </mat-card-title>
+          <mat-card-content  class="mat-card-content"style="margin-top: 30px;margin-left:-30px">₹{{price}}.0</mat-card-content>
+          <!-- <mat-card-title>$4606.06</mat-card-title> -->
+        </mat-card-header>
+
+      </mat-card>
+
+    </mat-grid-tile>
+
+
+    <!-- <mat-grid-list cols="3" rowHeight="7:1.3"> -->
+    <mat-grid-tile>
+      <mat-card class="example-card1" >
+        <mat-card-header class="wrapper">
+          <div mat-card-avatar class="example-header-image2 "></div>
+          <mat-card-title style="margin-top: 12px;color: #17262a; ">
+            Vehicle No:
+          </mat-card-title>
+          <!-- <mat-card-content class="mat-card-content" style="text-transform: uppercase;margin-top: 20px">vechicleNumber:</mat-card-content>  -->
+          <mat-card-content class="mat-card-content" style="margin-top: 30px;margin-left:-30px">{{vechicleNumber}}</mat-card-content>
+          <!-- <mat-card-content class="mat-card-content" style="text-transform: uppercase;">KA 28 M 9262</mat-card-content>  -->
+        </mat-card-header>
+      </mat-card>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <mat-card class="example-card1" >
+        <mat-card-header class="wrapper">
+          <div mat-card-avatar class="example-header-image3 "></div>
+          <mat-card-title style="margin-top: 12px;color: #17262a; ">Driver Name: </mat-card-title>
+        <mat-card-content class="mat-card-content" style="margin-top: 30px;margin-left:-30px" *ngIf="showdata"> {{driverName}} </mat-card-content>
+        <mat-card-content class="mat-card-content" style="margin-top: 30px;margin-left:-30px" *ngIf="!showdata">No Driver Available</mat-card-content>
+  
+      </mat-card-header>
+      </mat-card>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <mat-card class="example-card1">
+        <mat-card-header >
+          <div mat-card-avatar class="example-header-image7 "></div>
+          <mat-card-title style="margin-top: 5px; margin-left:-13px">
+            <button 
+              style="text-decoration:none;color:#ceeded;background: linear-gradient(145deg, #08b783 50%, #298096 100%);border-color: #04f1aa;border-radius: 10px;padding:15px;font-size: 15px;margin-left: 40px;margin-bottom: -10px;" (click)="callChat()">Click here to Chat</button>
+            
+
+          </mat-card-title>
+
+        </mat-card-header>
+      </mat-card>
+    </mat-grid-tile>
+    <!-- </mat-grid-list> -->
+
+  </mat-grid-list>
+
+  <!-- <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu"> -->
+
+
+</mat-card>
+<!-- style="position:relative;margin-top: -300px; width: 45%;margin-left:800px;margin-top:-490px" -->

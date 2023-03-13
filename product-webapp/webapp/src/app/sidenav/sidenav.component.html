@@ -1,0 +1,108 @@
+
+
+<mat-toolbar class="mat-elevation-z8">
+    <button
+  mat-icon-button
+  *ngIf="sidenav.mode === 'over'"
+  (click)="sidenav.toggle()"
+>
+  <mat-icon *ngIf="!sidenav.opened" (click)="reload()"  > menu </mat-icon>
+  <mat-icon *ngIf="sidenav.opened"> close </mat-icon>
+</button>
+<img style="margin-top: 12px" routerLink="/sidenav/main" src="../../assets/trynew.png" height="130px" >
+
+<div class="spacer"></div>
+</mat-toolbar>
+<div style="margin-top: -50px; position:absolute ; margin-left: 96%;">
+<button mat-icon-button [matMenuTriggerFor]="menu">
+<mat-icon style="color: rgb(222, 220, 220);">account_circle</mat-icon>
+</button>
+<mat-menu  #menu="matMenu">
+<!-- <button mat-menu-item>
+  <span routerLink="/update-profile">update Profile</span>
+</button>
+
+
+<button mat-menu-item routerLink="/booked-history">
+  <span  >Booked History</span>
+</button> -->
+
+<!-- <button mat-menu-item routerLink="/main">
+  <span >Home</span>
+</button> -->
+
+<button class="matmenu1" style="background: linear-gradient(145deg, #298096 100%, #08B783 50%);" mat-menu-item (click)="signout()">
+  <span style="font-size: larger;font-weight: bolder; font-family:Arial, Helvetica, sans-serif;padding:5px">Logout</span>
+</button>
+</mat-menu>
+</div>
+
+<mat-sidenav-container>
+    <mat-sidenav #sidenav="matSidenav" class="mat-elevation-z8">
+      <img
+        class="avatar mat-elevation-z8"
+        src="/../assets/profile PIc.jpeg" *ngIf="!image"
+      />
+      <img [src]="image" alt="profile pic" class="avatar mat-elevation-z8" *ngIf="image">
+      <!-- {{image}} -->
+      <h4 class="name">{{userName}}</h4>
+      
+  
+      <mat-divider></mat-divider>
+  
+      <button mat-button class="menu-button" (click)="goMain()">
+        <mat-icon>home</mat-icon>
+        <span>Home</span>
+      </button>
+      <button mat-button class="menu-button" routerLink="/sidenav/aboutUs">
+        <mat-icon>info</mat-icon>
+        <span>About Us</span>
+       </button>
+      <button mat-button class="menu-button" routerLink="/sidenav/update-profile">
+        <mat-icon>person</mat-icon>
+        <span>Update Profile</span>
+      </button>
+      
+      <button mat-button class="menu-button" routerLink="/sidenav/wallet">
+        <mat-icon>payment</mat-icon>
+        <span>Payment and Wallet</span>
+    </button>
+
+      <button mat-button class="menu-button" (click)="goMusic()">
+        <mat-icon>library_music</mat-icon>
+        <span>Music</span>
+       </button>
+       <button mat-button class="menu-button" routerLink="/sidenav/booking-history">
+        <mat-icon>history</mat-icon>
+        <span>Booking History</span>
+      </button>      
+      <button *ngIf="typeOfUser=='OWNER'" mat-button class="menu-button" (click)="goAfter()">
+        <mat-icon>commute</mat-icon>
+        <span>Check Passengers</span>
+      </button>
+  
+      <mat-divider></mat-divider>
+  
+      <button mat-button class="menu-button" routerLink="/sidenav/faq">
+        <mat-icon>quiz</mat-icon>
+        <span>FAQ</span>
+      </button>
+     
+
+      <!-- <button mat-button class="menu-button" routerLink="/sidenav/help">
+        <mat-icon>help</mat-icon>
+        <span>Help</span>
+      </button> -->
+      <mat-divider></mat-divider>
+      
+      <button mat-button class="menu-button" (click)="logout()">
+        <mat-icon>logout</mat-icon>
+        <span>Logout</span>
+      </button>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <div style="height: 91.3vh">
+        <router-outlet></router-outlet>
+        </div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>

@@ -1,0 +1,184 @@
+<!-- <app-navbar></app-navbar> -->
+<!-- <p>sidenav works!</p> -->
+
+<!-- <mat-toolbar>
+    <mat-icon>menu</mat-icon>
+    <img src="assets\caaeaae00b5c49ddb022b25ff3548cc5__5_-removebg-preview.png" >
+    
+<div class="spacer"></div>
+</mat-toolbar>
+<div style="margin-top: -50px; position:absolute ; margin-left: 96%;">
+<button mat-icon-button [matMenuTriggerFor]="menu">
+    <mat-icon style="color: rgb(222, 220, 220);">account_circle</mat-icon>
+  </button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item>
+      <span routerLink="/update-profile">update Profile</span>
+</button>
+    <button mat-menu-item>
+            <span>Logout</span>
+    </button>
+  </mat-menu>
+</div> -->
+
+
+<!-- 
+<mat-toolbar color="primary">
+    <mat-toolbar-row >
+
+        <button mat-icon-button>
+            <mat-icon (click)="sidenav.toggle()";>menu</mat-icon>
+        </button>
+
+        <h1>Poolify</h1>
+    </mat-toolbar-row>
+</mat-toolbar>
+<mat-sidenav-container>     
+    <mat-sidenav #sidenav opened="true" mode="side" >
+        <a mat-list-item>Home</a>
+        <a mat-list-item>Profile</a>
+        <a mat-list-item>Wallet</a>
+        <a mat-list-item>Your Rides</a>
+        <a mat-list-item>About Us</a>
+
+
+
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <div style="height: 88vh;">
+
+        </div>
+    </mat-sidenav-content>
+</mat-sidenav-container> -->
+
+<!-- #17262a
+#0E6655
+color="#0E6655"
+#16A085 
+#066c58 -->
+
+        
+
+
+<div class="html">
+    <div class="body" id="body">
+
+ <div class="player">
+        <div class="player__header">
+            <div class="player__img player__img--absolute slider">
+                <button class="player__button player__button--absolute--nw playlist">
+                    <img src="http://physical-authority.surge.sh/imgs/icon/playlist.svg" alt="playlist-icon">
+                </button>
+                <button class="player__button player__button--absolute--center play">
+                    <img src="http://physical-authority.surge.sh/imgs/icon/play.svg" alt="play-icon">
+                    <img src="http://physical-authority.surge.sh/imgs/icon/pause.svg" alt="pause-icon">
+                </button>
+                <div class="slider__content">
+                    <img class="img slider__img" src="https://ncsmusic.s3.eu-west-1.amazonaws.com/tracks/000/000/286/100x100/make-me-move-feat-karra-1586948717-dTsA9So1cu.jpg" alt="cover">
+                    <img class="img slider__img" src="https://ncsmusic.s3.eu-west-1.amazonaws.com/tracks/000/000/451/100x100/imagine-1586953710-4wJybAsS8x.jpg" alt="cover">
+                    <img class="img slider__img" src="https://ncsmusic.s3.eu-west-1.amazonaws.com/tracks/000/000/434/100x100/linked-1586953317-0BranYHgw8.jpg" alt="cover">
+                    <img class="img slider__img" src="https://ncsmusic.s3.eu-west-1.amazonaws.com/tracks/000/000/487/100x100/why-do-i-feat-bri-tolani-1586954592-AkIU1vSG9q.jpg" alt="cover">
+                    <img class="img slider__img" src="https://ncsmusic.s3.eu-west-1.amazonaws.com/tracks/000/000/137/100x100/invincible-1586946874-ZUsn5ZwSWh.jpg" alt="cover">
+                    <img class="img slider__img" src="https://ncsmusic.s3.eu-west-1.amazonaws.com/tracks/000/000/143/100x100/heroes-tonight-feat-johnning-1586946923-LsvZKuKHRf.jpg" alt="cover">
+                    <img class="img slider__img" src="https://linkstorage.linkfire.com/medialinks/images/7268dbaf-880f-4b40-aafe-0d45e278fe47/artwork-440x440.jpg" alt="cover">
+                </div>
+            </div>
+            <div class="player__controls">
+                <button class="player__button back">
+                    <img class="img" src="http://physical-authority.surge.sh/imgs/icon/back.svg" alt="back-icon">
+                </button>
+                <p class="player__context slider__context">
+                    <strong class="slider__name"></strong>
+                    <span class="player__title slider__title"></span>
+                </p>
+                <button class="player__button next">
+                    <img class="img" src="http://physical-authority.surge.sh/imgs/icon/next.svg" alt="next-icon">
+                </button>
+                <div class="progres">
+                    <div class="progres__filled"></div>
+                </div>
+            </div>
+        </div>
+        <ul class="player__playlist list">
+            <li class="player__song">
+                <img class="player__img img" src="https://ncsmusic.s3.eu-west-1.amazonaws.com/tracks/000/000/286/100x100/make-me-move-feat-karra-1586948717-dTsA9So1cu.jpg" alt="Make Me Move (feat. KARRA)" title="Make Me Move (feat. KARRA)">
+                <p class="player__context">
+                    <b class="player__song-name">Make Me Move</b>
+                    <span class="flex">
+                        <span class="player__title">Culture Code</span>
+                        <span class="player__song-time"></span>
+                    </span>
+                </p>
+                <audio class="audio" src="https://ncsmusic.s3.eu-west-1.amazonaws.com/tracks/000/000/286/make-me-move-feat-karra-1586948725-C9SPOA3UZn.mp3"></audio>
+            </li>
+            <li class="player__song">
+                <img class="player__img img" src="https://ncsmusic.s3.eu-west-1.amazonaws.com/tracks/000/000/451/100x100/imagine-1586953710-4wJybAsS8x.jpg" alt="cover">
+                <p class="player__context">
+                    <b class="player__song-name">Imagine</b>
+                    <span class="flex">
+                        <span class="player__title">Jim Yosef</span>
+                        <span class="player__song-time"></span>
+                    </span>
+                </p>
+                <audio class="audio" src="https://ncsmusic.s3.eu-west-1.amazonaws.com/tracks/000/000/451/imagine-1586953712-PjfTAsj2s7.mp3"></audio>
+            </li>
+            <li class="player__song">
+                <img class="player__img img" src="https://ncsmusic.s3.eu-west-1.amazonaws.com/tracks/000/000/434/100x100/linked-1586953317-0BranYHgw8.jpg" alt="cover">
+                <p class="player__context">
+                    <b class="player__song-name">Linked</b>
+                    <span class="flex">
+                        <span class="player__title">Jim Yosef</span>
+                        <span class="player__song-time"></span>
+                    </span>
+                </p>
+                <audio class="audio" src="https://ncsmusic.s3.eu-west-1.amazonaws.com/tracks/000/000/434/linked-1586953319-v8FLkcjqgO.mp3"></audio>
+            </li>
+            <li class="player__song">
+                <img class="player__img img" src="https://ncsmusic.s3.eu-west-1.amazonaws.com/tracks/000/000/487/100x100/why-do-i-feat-bri-tolani-1586954592-AkIU1vSG9q.jpg" alt="cover">
+                <p class="player__context">
+                    <b class="player__song-name">Why Do I?</b>
+                    <span class="flex">
+                        <span class="player__title">Unknown Brain</span>
+                        <span class="player__song-time"></span>
+                    </span>
+                </p>
+                <audio class="audio" src="https://ncsmusic.s3.eu-west-1.amazonaws.com/tracks/000/000/487/why-do-i-feat-bri-tolani-1586954600-5IMWlSMhuc.mp3"></audio>
+            </li>
+            <li class="player__song">
+                <img class="player__img img" src="https://ncsmusic.s3.eu-west-1.amazonaws.com/tracks/000/000/137/100x100/invincible-1586946874-ZUsn5ZwSWh.jpg" alt="cover">
+                <p class="player__context ">
+                    <b class="player__song-name">Invincible</b>
+                    <span class="flex">
+                        <span class="player__title">DEAF KEV</span>
+                        <span class="player__song-time"></span>
+                    </span>
+                </p>
+                <audio class="audio" src="https://ncsmusic.s3.eu-west-1.amazonaws.com/tracks/000/000/137/invincible-1586946876-v3qvV3TEKb.mp3"></audio>
+            </li>
+            <li class="player__song">
+                <img class="player__img img" src="https://ncsmusic.s3.eu-west-1.amazonaws.com/tracks/000/000/143/100x100/heroes-tonight-feat-johnning-1586946923-LsvZKuKHRf.jpg" alt="cover">
+                <p class="player__context">
+                    <b class="player__song-name">Heroes Tonight</b>
+                    <span class="flex">
+                        <span class="player__title">Janji</span>
+                        <span class="player__song-time"></span>
+                    </span>
+                </p>
+                <audio class="audio" src="https://ncsmusic.s3.eu-west-1.amazonaws.com/tracks/000/000/143/heroes-tonight-feat-johnning-1586946924-fcppiBJp7z.mp3"></audio>
+            </li>
+            <li class="player__song">
+                <img class="player__img img" src="https://linkstorage.linkfire.com/medialinks/images/7268dbaf-880f-4b40-aafe-0d45e278fe47/artwork-440x440.jpg" alt="cover">
+                <p class="player__context ">
+                    <b class="player__song-name">Collide</b>
+                    <span class="flex">
+                        <span class="player__title">Elektronomia</span>
+                        <span class="player__song-time"></span>
+                    </span>
+                </p>
+                <audio class="audio" src="https://ncsmusic.s3.eu-west-1.amazonaws.com/tracks/000/001/081/collide-1643284836-kJ42U7PzET.mp3"></audio>
+            </li>
+        </ul>
+    </div>
+
+</div>
+</div>

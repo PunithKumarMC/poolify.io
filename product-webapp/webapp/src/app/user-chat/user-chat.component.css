@@ -1,0 +1,14 @@
+p {
+    font-family: Lato;
+  }
+
+  #dialog-content {
+    width: 55%;
+    height:67%;
+    position: absolute;
+    top: 20%;
+    left: 25%;
+    margin-left: 0px;
+    background: linear-gradient(135deg, #01C278 0%, #D9D9D9 100%);
+    border: 1px solid #ccc;
+  }

@@ -1,0 +1,70 @@
+<div>
+    <mat-toolbar color="primary">
+        <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+            <mat-icon (click)="sidenav.toggle();">menu</mat-icon>
+        </button>
+        <span>ViewTube</span>
+        <div style="margin-left:260px; width:25%;">
+            <mat-form-field style="width: 500px;">
+                <input type="text" matInput placeholder="Search" style="width:350%;display: flexbox;" />
+                <button mat-button>
+                    <mat-icon>search</mat-icon>
+                </button>
+                <button mat-button>
+                    <mat-icon>mic</mat-icon>
+                </button>
+            </mat-form-field>
+        </div>
+        <span class="example-spacer"></span>
+
+
+        <button mat-icon-button class="example-icon notification-icon" aria-label="Example icon-button with heart icon">
+            <mat-icon>notifications</mat-icon>
+        </button>
+        <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon" (click)="onBtnClick()">
+            <mat-icon >video_call</mat-icon>
+        </button>
+        <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+            <mat-icon>apps</mat-icon>
+        </button>
+        <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+            <mat-icon>person</mat-icon>
+        </button>
+    </mat-toolbar>
+
+    <mat-sidenav-container>
+        <mat-sidenav mode="side" #sidenav style="width: 200px;">
+            <button mat-button class="sidenavButton">
+                <mat-icon>home</mat-icon>
+                <span> Home</span>
+            </button>
+            <button mat-button class="sidenavButton">
+                <mat-icon>explore</mat-icon>
+                <span> Explore</span>
+            </button>
+            <button mat-button class="sidenavButton">
+                <mat-icon>unsubscribe</mat-icon>
+                <span> Subscription</span>
+            </button>
+            <button mat-button class="sidenavButton">
+                <mat-icon>library_add</mat-icon>
+                <span> Library</span>
+            </button>
+            <button mat-button class="sidenavButton">
+                <mat-icon>history</mat-icon>
+                <span> History</span>
+            </button>
+            <hr>
+            <p style="text-align: left; padding-left:15px">Sign in to like videos,comment, and subscribe.</p>
+            <button mat-button class="signIn" color="primary">
+                <mat-icon>person</mat-icon>
+                <span>SIGN IN</span>
+            </button>
+        </mat-sidenav>
+        <mat-sidenav-content>
+            <div style="height: 100vh;">
+               <app-main></app-main>
+            </div>
+        </mat-sidenav-content>
+    </mat-sidenav-container>
+</div>

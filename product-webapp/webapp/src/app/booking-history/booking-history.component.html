@@ -1,0 +1,46 @@
+
+<div class="body">
+  <div style="margin:25px;font-size:xx-large;font-weight: bolder;margin-left: 42%;color: rgb(2, 40, 7);">
+      Ride History
+  </div>
+  <div class="car"  >
+      <img class="vector" src="\assets\19280-removebg-preview.png" alt=""><br><br><br>
+      <p class="fast">Get On the Ride Again </p>
+      <p class="ordering" style="color:#013317;letter-spacing: 2px;font-weight:bold">Re-Ordering only takes a few clicks via website</p><br>
+      <!-- <button class="learn">Learn more <i class="fa fa-arrow-right" aria-hidden="true"></i></button> -->
+      <!-- <div *ngFor="let email of emailArray">{{email}}</div> -->
+    </div>
+  <div class="image">
+    <img src="../../assets/booking_pic-removebg-preview.png" alt="" style="height: 350px;width: 600px;opacity: 0.2;margin-left: 450px;">
+  </div>
+    <div style="margin-left: 270px;margin-right: 225px;margin-top: 25px;" class="scroll">
+  <table >
+    <thead>
+      <tr>
+        <th>From PLace</th>
+        <th>To PLace</th>
+        <!-- <th>Vehicle Type</th>
+        <th>Vehicle Number</th> -->
+        <th>Total Amount</th>
+        <!-- <th>Payment Medium</th>  -->
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let v of booking.fromPlace let i=index">
+        <td data-label="Job Title">
+         {{booking.fromPlace[i]}}
+        </td>
+        <td data-label="Location">
+          {{booking.toPlace[i]}}
+        </td>
+        <!-- <td >{{booking.vehicleType[i]}}</td>
+        <td >{{booking.vehNumber[i]}}</td> -->
+        <td >{{booking.estimatedPrice[i]}}</td>
+        <!-- <td >{{booking.paymentMedium[i]}}</td> -->
+      </tr>
+    </tbody>
+  </table>
+  </div>
+  </div>
+
+

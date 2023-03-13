@@ -1,0 +1,43 @@
+<div class="mainscreen"><div class="amount-box text-center" >
+  <img src="https://lh3.googleusercontent.com/ohLHGNvMvQjOcmRpL4rjS3YQlcpO0D_80jJpJ-QA7-fQln9p3n7BAnqu3mxQ6kI4Sw" alt="wallet">
+  <p style="	font-weight: bold;
+	color:black;">Total Balance</p><hr>
+  <p class="amount">₹ {{this.balance}}</p><hr>
+</div>
+<!-- <button (click)="getTransaction()">click</button> -->
+
+<div class="btn-group text-center">
+  <input type="number" placeholder="amount to be added" [(ngModel)]="money" class="inputButton"><br><br>
+  <button type="button" class="btn btn-outline-light" (click)="payNow()">Add Money</button>
+  <button type="button" class="btn btn-outline-light" (click)="deductMoney()" *ngIf="this.clickToPay=='enabled'">Pay</button>
+  </div>
+
+  <h2 style="color: rgb(101, 15, 15);font-weight: bolder;margin-left: 300px; ">{{WalletError}}</h2>
+  <div class="txn-history">
+    <p><b style="margin-left: 40%;font-weight: bolder;font-size: larger; ">Payment History</b></p>
+    <!-- <ul>
+      
+       {{this.tranactions[i]}}
+      </li>
+    </ul> -->
+    <p class="txn-list" *ngIf="this.tranactions[4]<0">Debit<span class="debit-amount">₹{{this.tranactions[4]}}</span></p>
+    <p class="txn-list" *ngIf="this.tranactions[4]>0">Credit<span class="credit-amount">₹{{this.tranactions[4]}}</span></p>
+
+    <p class="txn-list" *ngIf="this.tranactions[3]<0">Debit<span class="debit-amount">₹{{this.tranactions[3]}}</span></p>
+    <p class="txn-list" *ngIf="this.tranactions[3]>0">Credit<span class="credit-amount">₹{{this.tranactions[3]}}</span></p>
+
+    
+    <p class="txn-list" *ngIf="this.tranactions[2]>0">Credit<span class="credit-amount">₹{{this.tranactions[2]}}</span></p>
+    <p class="txn-list" *ngIf="this.tranactions[2]<0">Debit<span class="debit-amount">₹{{this.tranactions[2]}}</span></p>
+
+    <p class="txn-list" *ngIf="this.tranactions[1]>0">Credit<span class="credit-amount">₹{{this.tranactions[1]}}</span></p>
+    <p class="txn-list" *ngIf="this.tranactions[1]<0">Debit<span class="debit-amount">₹{{this.tranactions[1]}}</span></p>
+    
+    <p class="txn-list" *ngIf="this.tranactions[0]>0">Credit<span class="credit-amount">₹{{this.tranactions[0]}}</span></p>
+    <p class="txn-list" *ngIf="this.tranactions[0]<0">Debit<span class="debit-amount">₹{{this.tranactions[0]}}</span></p>
+  </div>
+</div>
+
+
+
+

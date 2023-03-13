@@ -1,0 +1,71 @@
+<div class="mainscreen">
+  <div class="card">
+    <div class="leftside">
+      <img
+        src="../../assets/car-driving-concept-illustration_114360-7981.webp"
+        class="product"
+        alt="Shoes"
+      />
+    </div>
+    <div class="rightside">
+      <form [formGroup]="paymentform">
+        <img src="../../assets/card_img.png" />
+        <div class="form-group">
+          <h5>Email</h5>
+          <input
+            type="text"
+            class="inputbox"
+            name="email"
+            required
+            formControlName="email"
+            readonly
+          />
+          <h5>Phone Number</h5>
+          <input
+            type="number"
+            class="inputbox"
+            name="phone_number"
+            id="phone_number"
+            formControlName="phone"
+            required
+          />
+
+          <h5>Name</h5>
+          <input
+            type="text"
+            class="inputbox"
+            name="name"
+            formControlName="name"
+            required
+            readonly
+          />
+          <h5>Amount to pay</h5>
+          <input
+            type="number"
+            class="inputbox"
+            name="card_number"
+            id="amount"
+            formControlName="amount"
+            required
+            readonly
+          />
+          <button type="submit" class="button" (click)="payNow()">
+            Click to pay
+          </button>
+          <h1 style="margin-left: 45%">OR</h1>
+
+          <button
+            type="button"
+            class="button"
+            (click)="openDialog()"
+            style="margin-top: -10rem;
+            background: linear-gradient(135deg, #3f4343 50%, #8e6b34 100%)"
+          >
+            Pay from wallet
+          </button>
+          <!-- <button (click)="sendEmailToPassenger()">herehere</button> -->
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

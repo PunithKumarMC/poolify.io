@@ -1,0 +1,224 @@
+
+<div class="box">
+  <mat-sidenav-container class="sidenav-container">
+    <mat-sidenav-content style="overflow:hidden; max-width: 100%;">
+      <mat-toolbar color="primary">
+        <div class="container locations">
+          <div class="row">
+            <div class="col-md-6">
+              <form>
+                <div class="form-group">
+                  <label for="start"><span class="req">* </span></label>
+                  <div class="forms">
+                    <p style="margin-left: 360px;">From</p><input ngx-google-places-autocomplete [options]='options'
+                      (onAddressChange)="AddressChange($event)" required type="text"
+                      [(ngModel)]="passengerDetails.fromPlace" [(ngModel)]="driverDetails.fromPlace" id="txtSource"
+                      name="start" class="form-control phone" maxlength="28" placeholder="Enter start location"
+                      #addressInput1 />
+                  </div>
+                  <!-- <input ngx-google-places-autocomplete [options]='options'  (onAddressChange)="AddressChange($event)"/> -->
+                </div>
+                <div class="form-group">
+                  <label for="end"><span class="req">* </span> </label>
+                  <div class="forms">
+                    <p style="margin-left: 20px;">To</p><input ngx-google-places-autocomplete [options]='options'
+                      (onAddressChange)="AddressChange($event)" class="form-control" type="text"
+                      [(ngModel)]="passengerDetails.toPlace" [(ngModel)]="driverDetails.toPlace" name="end"
+                      id="txtDestination" required placeholder="Enter destination " style="height:fit-content"
+                      #addressInput />
+                  </div>
+                  <div id="errFirst"></div>
+                </div>
+                <div class="form-group">
+                  <div class="popup-link">
+                    <!-- <input href="#popup1" class="btn btn-success book" type="submit" name="submit_reg" value="Book" (click)="findDistance()"> -->
+                    <button class="button3" (click)="onToggleDisplay()" type="submit" name="submit_reg"
+                      (click)="mapToggle()" (click)="submit()" style="margin:25px; margin-top:30px ;">Next</button>
+                  </div>
+                </div>
+              </form><!-- ends register form -->
+              <!-- second for to fiter user-->
+            </div><!-- ends col-6 -->
+          </div>
+        </div>
+      </mat-toolbar>
+      <!-- Add Content Here -->
+      <div class="car" *ngIf="value">
+        <img class="vector" src="\assets\19280-removebg-preview.png" alt="">
+        <p class="fast">Fast and Convinient </p>
+        <br><br>
+        <p class="ordering">Ordering only takes a few clicks via website</p><br>
+        <button class="learn">Learn more <i class="fa fa-arrow-right" aria-hidden="true"style="color:white"></i></button>
+        <!-- <div *ngFor="let email of emailArray">{{email}}</div> -->
+      </div>
+      <div class="car" id="car1" *ngIf="!value">
+        <form *ngIf="toggle">
+          <div class="form-group">
+            <h4>Choose Transport:</h4>
+            <input type="radio" class="form-control" id="TwoSeater" name="transport"
+              [(ngModel)]="passengerDetails.vehicleType" value="Twoseater">
+            <label for="TwoSeater">Two Seater</label><br>
+            <input type="radio" class="form-control" id="FourSeater" name="transport"
+              [(ngModel)]="passengerDetails.vehicleType" value="fourSeater">
+            <label for="FourSeater">Four Seater</label><br>
+            <input type="radio" class="form-control" id="SevenSeater" name="transport"
+              [(ngModel)]="passengerDetails.vehicleType" value="sevenseater">
+            <label for="SevenSeater">Seven Seater</label><br>
+          </div>
+          <br>
+          <div class="form-group">
+            <h4>No of Seats Required:</h4>
+            <input type="radio" id="1" name="passengers" [(ngModel)]="passengerDetails.noOfSeatsRequired" value="1">
+            <label for="1">1</label><br>
+            <input type="radio" id="2" name="passengers" [(ngModel)]="passengerDetails.noOfSeatsRequired" value="2">
+            <label for="2">2</label><br>
+            <input type="radio" id="3" name="passengers" [(ngModel)]="passengerDetails.noOfSeatsRequired" value="3">
+            <label for="3">3</label><br>
+            <input type="radio" id="4" name="passengers" [(ngModel)]="passengerDetails.noOfSeatsRequired" value="4">
+            <label for="4">4</label><br>
+            <input type="radio" id="5" name="passengers" [(ngModel)]="passengerDetails.noOfSeatsRequired" value="5">
+            <label for="5">5</label><br>
+            <input type="radio" id="6" name="passengers" [(ngModel)]="passengerDetails.noOfSeatsRequired" value="6">
+            <label for="6">6</label><br>
+          </div>
+          <!-- routerLink="/after-booking" -->
+          <!-- (click)="register()" -->
+          <button type="submit" class="button3" (click)="sendpassengerDetails()" onclick="GetRoute()"
+            style="margin-left:480px;margin-top:10px ;"> Search</button>
+          <!-- <button type="submit"  class="button3" cl (click)="getPassengerDetails()"  >get</button> -->
+        </form>
+        <form *ngIf="!toggle">
+          <div class="form-group">
+            <h4>No of Seats wants to Share:</h4>
+            <input type="radio" id="1" name="passengers1" [(ngModel)]="driverDetails.noOfSeatsRequired" value="1">
+            <label for="1">1</label><br>
+            <input type="radio" id="2" name="passengers1" [(ngModel)]="driverDetails.noOfSeatsRequired" value="2">
+            <label for="2">2</label><br>
+            <input type="radio" id="3" name="passengers1" [(ngModel)]="driverDetails.noOfSeatsRequired" value="3">
+            <label for="3">3</label><br>
+            <input type="radio" id="4" name="passengers1" [(ngModel)]="driverDetails.noOfSeatsRequired" value="4">
+            <label for="4">4</label><br>
+            <input type="radio" id="5" name="passengers1" [(ngModel)]="driverDetails.noOfSeatsRequired" value="5">
+            <label for="5">5</label><br>
+            <input type="radio" id="6" name="passengers1" [(ngModel)]="driverDetails.noOfSeatsRequired" value="6">
+            <label for="6">6</label><br>
+          </div>
+          <button type="submit" class="button3" (click)="sendDriverDetails()" onclick="GetRoute()" (click)="sendDriverEmailId()"
+            style="margin-left:480px;margin-top:10px ;"> Search</button>
+          <!-- <button type="submit"  class="button3" (click)="getDriverDetails()">get</button> -->
+        </form>
+      </div>
+      <div>
+        <div id="dvMap" onclick="GetRoute()" style="margin-left:30px ; width: 100%; height: 350px; margin-top: 15px;">
+        </div>
+      </div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+  <div class="sidepage">
+    <div class="cards"><img src="./assets/imgonline-com-ua-ReplaceColor-Yknz2n6Qx7syx.jpg" alt="" height="150px"></div>
+   <br>
+    <p style="color:rgb(85, 87, 86); font-weight: bolder;font-size: larger;">Poolify Balance:</p>
+    <span class="balance">
+      <h1 style="font-weight: bold;" *ngIf="this.walletBal==null">Update profile to receive balance in wallet</h1>
+      <h1 style="font-weight: bold;" *ngIf="this.walletBal>0"> ₹ {{walletBal}}</h1>
+      <button type="submit" style="font-weight:bold;margin-top: -7px; font-size: larger;" class="button3"
+        (click)="addMoney()">+ Add Balance</button>
+      <!-- <span style="font-weight:bold; color:#4c57c0"><i class='fa fa-plus'
+          style='color:#4c57c0; margin-left: 10px;margin-right: 6px;'></i> <span>add balance</span> </span> -->
+    </span>
+    <h1 class="drivers" style="font-weight:bolder;" *ngIf="toggle">Drivers</h1>
+    <div class="startRide">
+    <h1 class="drivers" style="font-weight:bolder;" *ngIf="!toggle">Passengers</h1><span> <button (click)="gotoAfterBooking()" style="border-radius: 15px; border: none ;padding-left: 15px;padding-right: 15px;padding-top: 5px;padding-bottom: 5px; color: white;" *ngIf="!toggle">Start Ride</button></span>
+  </div>
+    <div id="dvDistance" style="font-weight:bold;margin-top: -15px;"></div>
+    <hr style="color:grey ;">
+    <div *ngIf="passengerName.length == 0 && !toggle ">
+      <h2 style="font-weight: 400;font-size: medium;">Fill the details to see the Passengers available for you</h2>
+    </div>
+    <div *ngIf="driverName.length  == 0 && toggle">
+      <h2 style="font-weight: 400;font-size: medium;">Fill the details to see the vehicles available for you</h2>
+    </div>
+    <div *ngIf="toggle" class="details ">
+      <!-- <div id="dvDistance" style="font-weight:bold;"></div> -->
+      <div class="scroll">
+      <div class="driver-info" *ngFor="let i of driverName;let x=index">
+        <div class="card" style="width:28rem; border: none; height: 20px;">
+          <div class="card-horizontal-new">
+            <div class="img-square-wrapper">
+              <img [src]="driverPhoto[x]" alt="image" height="90px" width="70px" style="border-radius: 15px;" *ngIf="driverPhoto[x]">
+              <img class="" src="https://cdn-icons-png.flaticon.com/512/64/64495.png" alt="Card image cap"
+                height="90px" style="border-radius: 15px;" *ngIf="!driverPhoto[x]">
+            </div>
+            <div class="card-body">
+              <h2 class="card-title">{{i}} {{driverlastName[x]}}</h2>
+              <p class="card-text">{{driverGender[x]}}</p>
+              <!-- <button type="submit" class="card-button"  routerLink="/success"
+                (click)="getDriverEmailId(x)" >BOOK</button> -->
+
+                <button class="card-button" type="submit" (click)="getDriverEmailId(x)" (click)="sendupdateNoOfSeats()"><a style="color:white" (click)="openPaymentMedium()" (click)="bookToggle()">BOOK</a></button>
+            </div>
+
+          </div>
+        </div>
+        <div class="rs" id="price1"></div>
+      </div>
+    </div>
+    </div>
+    <div *ngIf="!toggle" class="details">
+      <!-- <div id="dvDistance" style="font-weight:bold;"></div> -->
+      <div class="scroll">
+          <div class="driver-info" *ngFor="let i of passengerName;let x=index">
+            <div class="card" style="width: 28rem; border: none; height:20px;">
+              <div class="card-horizontal-new">
+                <div class="img-square-wrapper">
+                  <img [src]="passengerPhoto[x]" alt="passengerPic" height="90px" width="70px" style="border-radius: 15px;" *ngIf="passengerPhoto[x]">
+                <img class="" src="https://cdn-icons-png.flaticon.com/512/64/64495.png" alt="Card image cap"
+                  height="90px" style="border-radius: 15px;" *ngIf="!passengerPhoto[x]">
+                </div>
+                <div class="card-body">
+                <h2 class="card-title">{{i}} {{passengerLastName[x]}}</h2>
+                <p class="card-text">{{passengerGender[x]}}</p>
+                
+                <!-- <button class="card-button" type="submit" (click)="getPassengerEmailId(x)" (click)="sendupdateNoOfSeats()"><a style="color:white" (click)="openPaymentMedium()" (click)="bookToggle()">BOOK</a></button> -->
+                <button type="submit" class="card-button"  routerLink="/success"
+                (click)="getPassengerEmailId(x)" >BOOK</button>
+                <!-- routerLink="/payment" -->
+                <!-- <div id="dialog">
+                    <div id="dialog-content">
+                    <div id="dialog-text">How would you like to pay?</div>
+                    <div id="dialog-actions">
+                      <button type="button" id="dialog-ok">Cash</button>
+                      <button type="button" id="dialog-ok">Pay online</button>
+                      <button type="button" id="dialog-cancel">Wallet</button>
+                    </div>
+                    </div>
+                  </div>
+                </div> -->
+              </div>
+              
+            </div>
+          </div><br>
+        </div>
+
+     
+      </div>
+    </div>
+    <!-- driver -->
+      <div style="margin-top:-30px" class="toggle-button" *ngIf="checkingUser">
+        <h1 style="font-weight: bolder;">Share</h1><span class="spanSpace">   </span>
+        <label class="switch">
+          <input type="checkbox" (click)="onToggleDriver()" (click)="updateDatabase()" style="background: linear-gradient(145deg, #08B783 0%, #298096 100%);">
+          <span class="slider round"></span>
+        </label><span class="spanSpace">   </span>
+        <h1 style="font-weight: bolder;">Pool</h1>
+      </div>
+ <!-- //client -->
+      <div style="margin-top:-30px"class="toggle-button" *ngIf="!checkingUser">
+        <h1 style="font-weight: bolder;">Share</h1><span class="spanSpace">   </span>
+        <label class="switch" (click)="alertFunction()">
+          <input type="checkbox" checked disabled  >
+          <span class="slider round"></span>
+        </label><span class="spanSpace">   </span>
+        <h1 style="font-weight: bolder;">Pool</h1>
+      </div>
+  </div>

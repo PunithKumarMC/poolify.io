@@ -1,0 +1,171 @@
+
+/* body {
+    background-image: url('https://mir-s3-cdn-cf.behance.net/projects/404/fd11f6134763559.Y3JvcCwxMDgwLDg0NCwwLDExNw.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+  } */
+  @import
+  url('https://fonts.googleapis.com/css?family=Lato:400,700');
+
+
+
+
+.example-card {
+  margin-top: -7px;
+    max-width: 950px;
+    margin-left:590px;
+    /* padding-left:100px; */
+        background-color: rgb(206, 237, 237);
+    /* color: black; */
+    /* background-image:url("../../assets/7197526-removebg-preview.png"); */
+    color: #17262a; 
+    
+  }
+  .example-card2 {
+    width: 33%;
+    margin-left:15px;
+    margin-top:15px;
+    /* padding:15px; */
+    position:absolute;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    /* background: linear-gradient(145deg, #08b783 50%, #298096 100%); */
+     color: #17262a; 
+    /* background: linear-gradient(135deg, #01C278 0%, #D9D9D9 100%); */
+    ;
+    background: linear-gradient(135deg, #01C278 0%, #D9D9D9 160%);
+    /* color: black; */
+    box-shadow: 5px 5px 15px rgba(rose, .5);
+  border-radius: 10px;
+
+  
+  }
+  .example-card6{
+    width: 45%;
+    margin-left:800px;
+    /* margin-top:200px; */
+    position:absolute;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    background-color: #97e2cb;
+    ;
+    color: black;
+    box-shadow: 5px 5px 15px rgba(rose, .5);
+  border-radius: 10px;
+
+
+  }
+  
+  .example-card1 {
+    width: 540px;
+    height: 90px;
+    margin-left:1px;
+    max-width: 800px;
+    background-color: whitesmoke;
+    margin-bottom:5px;
+    /* background: linear-gradient(145deg, #08b783 50%, #298096 100%); */
+    /* background: #17262a; */
+    background: linear-gradient(135deg, #01C278 0%, #D9D9D9 160%);
+    border-radius:20px ;
+    font-weight: bolder;
+    
+  }
+  
+  
+  .example-header-image {
+    background-image: url('https://www.vhv.rs/dpng/d/52-527311_booking-reservation-icon-png-transparent-png.png');
+    
+    background-size: cover;
+    padding: 2px;
+    margin-top: 10px;
+  }
+  .example-header-image2 {
+    background-image: url('https://tse3.mm.bing.net/th?id=OIP.UUEQwEwIWOlBg78r8NnImgHaHV&pid=Api&P=0');
+    
+    background-size: cover;
+    padding: 2px;
+    margin-top: 10px;
+  }
+  .example-header-image3 {
+    background-image: url('https://thumb7.shutterstock.com/display_pic_with_logo/2730304/496638985/stock-vector-vector-flat-taxi-driver-in-uniform-and-hat-illustration-isolated-on-white-background-cartoon-style-496638985.jpg');
+    
+    background-size: cover;
+    padding: 2px;
+    margin-top: 10px;
+  }
+  .example-header-image9 {
+    background-image: url('https://icons.veryicon.com/png/o/miscellaneous/jiankangxian/contact-us-20.png');
+    
+    background-size: cover;
+    padding: 2px;
+    margin-top: 10px;
+  }
+
+
+
+  .example-header-image4 {
+    background-image: url('https://library.kissclipart.com/20180904/ztq/kissclipart-money-clipart-money-bag-make-money-online-earn-c-9d5516feb3f374d7.jpg');
+    
+    background-size: cover;
+    padding: 2px;
+    margin-top: 10px;
+  }
+  .example-header-image5 {
+    background-image: url('https://static.vecteezy.com/system/resources/previews/000/493/471/original/location-icon-design-vector.jpg');
+    
+    background-size: cover;
+    padding: 2px;
+    margin-top: 10px;
+  }
+  .example-header-image6    {
+    background-image: url('https://static.vecteezy.com/system/resources/previews/000/440/207/original/vector-location-icon.jpg');
+    
+    background-size: cover;
+    padding: 2px;
+    margin-top: 10px;
+  }
+  .example-header-image7   {
+    background-image: url('https://www.downloadclipart.net/large/45410-red-chat-icon-glossy-clipart.png');
+    
+    background-size: cover;
+    padding: 2px;
+    margin-top: 10px;
+  }
+
+  h2, h3, h1{
+    font-family: Oxygen
+  }
+
+  .mat-card-content{
+    margin-top: 0px;
+    text-align: center;
+    text-transform: capitalize;
+    text-shadow: #04f1aa;
+    font-size:medium;
+    font-family: Garamond;
+    font-weight: bolder;
+    color: rgb(0, 0, 0);
+    z-index: 20;
+    display: nonee;
+    padding: 25px 35px;
+    transform: translate(122%, -50%);
+  }
+  .wrapper:hover .mat-card-content {
+    
+    transform: translate(-10%, -50%);
+    transition: all 0.8s ease;
+    /* background: linear-gradient(145deg, #08b783 50%, #298096 100%); */
+    background: linear-gradient(135deg, #01C278 0%, #D9D9D9 160%);
+    width:100%
+    
+    }
+  .mat-card-title{
+    text-transform: uppercase;
+    margin-top: 8px;
+    font-size:larger;
+    color: rgb(7, 59, 3);
+  }
+  button{
+    background: linear-gradient(145deg, #08B783 0%, #298096 100%);
+}

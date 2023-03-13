@@ -1,0 +1,134 @@
+body {
+  font-family: "Roboto", sans-serif !important;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.mainscreen {
+  min-height: 91.2vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: #dfdbe5;
+  background: linear-gradient(145deg, #08b783 50%, #298096 100%);
+  color: #0c5741;
+}
+
+.card {
+  width: 80rem;
+  height: 35rem;
+  margin: auto;
+  background: white;
+  position: center;
+  align-self: center;
+  top: 0rem;
+  border-radius: 1.5rem;
+  box-shadow: 4px 3px 20px #3535358c;
+  display: flex;
+  flex-direction: row;
+}
+
+.leftside {
+  background: linear-gradient(135deg, #08b783 0%, #298096 100%);
+  width: 35rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-top-left-radius: 1.5rem;
+  border-bottom-left-radius: 1.5rem;
+}
+
+.product {
+  object-fit: cover;
+  width: 25em;
+  height: 35em;
+  border-radius: 20%;
+}
+
+.rightside {
+  background-color: #ffffff;
+  width: 35rem;
+  border-bottom-right-radius: 1.5rem;
+  border-top-right-radius: 1.5rem;
+  padding: 1rem 2rem 3rem 3rem;
+  margin-left:2rem;
+}
+
+h5 {
+  display: block;
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 0.8rem 0;
+}
+
+
+.inputbox {
+  color: #030303;
+  width: 120%;
+  padding: 0.5rem;
+  border: none;
+  border-bottom: 3.9px solid #ccc;
+  margin-bottom: 1rem;
+  border-radius: 0.3rem;
+  font-family: "Roboto", sans-serif;
+  color: #615a5a;
+  font-size: 1.1rem;
+  font-weight: bolder;
+  outline: none;
+}
+
+/* .expcvv {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 0.6rem;
+}
+
+.expcvv_text {
+  padding-right: 1rem;
+}
+.expcvv_text2 {
+  padding: 0 1rem;
+} */
+
+.button {
+  background: linear-gradient(135deg, #08b783 0%, #298096 100%);
+  padding: 10px;
+  border: none;
+  border-radius: 50px;
+  color: white;
+  font-weight: 400;
+  font-size: 1.2rem;
+  margin-top: 10px;
+  margin-left:25%;
+  width: 50%;
+  letter-spacing: 0.11rem;
+  outline: none;
+}
+
+.button:hover {
+  transform: scale(1.05) translateY(-3px);
+  box-shadow: 3px 3px 6px #38373785;
+}
+
+@media only screen and (max-width: 1000px) {
+  .card {
+    flex-direction: column;
+    width: auto;
+  }
+
+  .leftside {
+    width: 100%;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 0;
+    border-top-right-radius: 0;
+    border-radius: 0;
+  }
+
+  .rightside {
+    width: auto;
+    border-bottom-left-radius: 1.5rem;
+    padding: 0.5rem 3rem 3rem 2rem;
+    border-radius: 0;
+  }
+}

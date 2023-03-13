@@ -1,0 +1,31 @@
+<mat-toolbar>
+  <!-- <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+    <mat-icon (click)="sidenav.toggle();">menu</mat-icon>
+</button> -->
+  <img src="assets\caaeaae00b5c49ddb022b25ff3548cc5__5_-removebg-preview.png">
+
+  <div class="spacer"></div>
+</mat-toolbar>
+<div style="margin-top: -50px; position:absolute ; margin-left: 96%;">
+  <button mat-icon-button [matMenuTriggerFor]="menu">
+    <mat-icon style="color: rgb(222, 220, 220);">account_circle</mat-icon>
+  </button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item>
+      <span routerLink="/update-profile">update Profile</span>
+    </button>
+   
+    
+    <button mat-menu-item routerLink="/booked-history">
+      <span  >Booked History</span>
+    </button>
+
+    <button mat-menu-item routerLink="/main">
+      <span >Home</span>
+    </button>
+
+    <button mat-menu-item>
+      <span>Logout</span>
+    </button>
+  </mat-menu>
+</div>

@@ -1,0 +1,701 @@
+<div
+  style="
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: rgb(230, 230, 230);
+  "
+>
+  <img
+    src="../../assets/updateprofilebg.png"
+    style="
+      height: 88%;
+      width: 45%;
+      position: absolute;
+      margin-top: 2%;
+      margin-left: -70px;
+      opacity: 0.9;
+    "
+  />
+
+  <div style="margin-top: 6%; width: 60%; margin-left: 35%; position: absolute">
+    <img
+      src="../../assets/icon-register.png"
+      style="
+        width: 150px;
+        height: 150px;
+        margin-left: 90%;
+        margin-top: 150px;
+        position: absolute;
+      "
+    />
+
+    <mat-stepper
+      [linear]="isLinear"
+      #stepper
+      style="background:linear-gradient(90deg, #268883 0%, #026f8a 100%);; border-radius: 30px;border: solid; color: black !important;
+      box-shadow: 0 4px 8px 10px rgba(0, 0, 0, 0.2), 0 6px 20px 10px rgba(0, 0, 0, 0.19);
+      color: rgb(39, 23, 23)"
+
+    >
+      <mat-step [stepControl]="firstFormGroup"  label="Personal details" >
+        <form
+          [formGroup]="firstFormGroup"
+          style="margin-top: 25px; margin-left: 10%;"
+        >
+          <div class="form-group">
+            <label
+              for="firstName"
+              style="
+              
+                font-weight: bolder;
+                margin-left: -80px;
+                margin-top: 15px;
+                position: absolute;
+              "
+              >First Name : &nbsp;</label
+            >
+            <input
+              formControlName="firstName"
+              type="text"
+              class="form-control"
+              id="firstName"
+              aria-describedby="emailHelp"
+              placeholder="Enter first name"
+              style="
+                border-style: solid;
+                border-color: #0fb081;
+                border-width: 1px;
+                height: 50px;
+                width: 30%;
+                
+              "
+            />
+          </div>
+          <div
+            class="form-group"
+            style="margin-left: 50%; margin-top: -50px; width: 100%"
+          >
+            <label
+              for="lastName"
+              style="
+              
+                font-weight: bolder;
+                margin-left: -80px;
+                margin-top: 15px;
+                position: absolute;
+              "
+              >Last Name :</label
+            >
+            <input
+              type="text"
+              formControlName="lastName"
+              class="form-control"
+              id="lastName"
+              placeholder="Enter Last Name"
+              style="
+                border-style: solid;
+                border-color: #0fb081;
+                border-width: 1px;
+                height: 50px;
+                width: 30%;
+              "
+            />
+          </div>
+          <div class="form-group" style="margin-top: 45px">
+            <label
+              style="
+                font-weight: bolder;
+                margin-left: -80px;
+                margin-top: 15px;
+                position: absolute;
+              "
+              >Enter DOB :</label
+            >
+            <input
+              formControlName="DOB"
+              type="date"
+              class="form-control"
+              style="
+                border-style: solid;
+                border-color: #0fb081;
+                border-width: 1px;
+                height: 50px;
+                width: 30%;
+              "
+            />
+          </div>
+          <div
+            class="form-group"
+            style="margin-left: 50%; margin-top: -50px; width: 100%"
+          >
+            <label
+              style="
+                font-weight: bolder;
+                margin-left: -80px;
+                margin-top: 15px;
+                position: absolute;
+              "
+              >Gender :</label
+            >
+            <select
+              formControlName="gender"
+              name="gender"
+              class="form-control"
+              style="
+                border-style: solid;
+                border-color: #0fb081;
+                border-width: 1px;
+                height: 50px;
+                width: 30%;
+              "
+            >
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+              <option value="others">Others</option>
+            </select>
+          </div>
+
+          <div
+            class="form-group"
+            style="margin-left: 50%; margin-top: -50px; width: 100%"
+          >
+            <label
+              style="
+                font-weight: bolder;
+                margin-left: -80px;
+                margin-top: 15px;
+                position: absolute;
+              "
+              >Gender :</label
+            >
+            <select
+              formControlName="gender"
+              name="gender"
+              class="form-control"
+              style="
+                border-style: solid;
+                border-color: #0fb081;
+                border-width: 1px;
+                height: 50px;
+                width: 30%;
+              "
+            >
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+              <option value="others">Others</option>
+            </select>
+          </div>
+
+          <div class="form-group" style="margin-top: 50px">
+            <label
+              for="contactnumber"
+              style="
+                font-weight: bolder;
+                margin-left: -80px;
+                margin-top: 15px;
+                position: absolute;
+              "
+              >Contact :</label
+            >
+            <input
+              formControlName="contactNo"
+              type="tel"
+              class="form-control"
+              id="lastName"
+              placeholder="Enter your contact number"
+              style="
+                border-style: solid;
+                border-color: #0fb081;
+                border-width: 1px;
+                height: 50px;
+                width: 30%;
+              "
+            />
+          </div>
+          <div
+            class="form-group"
+            style="margin-left: 40%; margin-top: -40px; width: 100%"
+          >
+            <mat-label style="font-weight: bolder; font-size: 15px;   letter-spacing: 0.5px;font-weight:500;
+            color: rgb(226, 222, 222);
+            font-size: medium;"
+              >I want to register as
+              :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</mat-label
+            >
+            <mat-radio-group
+              aria-label="Select an option"
+              formControlName="ownerOrUser"
+            >
+              <mat-radio-button
+                value="OWNER"
+                style="
+                  font-weight: bolder;
+                  height: 30px;
+                  padding-top: 2px;
+                  padding-bottom: 20px;
+                  padding-left: 20px;  letter-spacing: 0.5px;font-weight:500;
+  color: rgb(226, 222, 222);
+  font-size: medium;
+                "
+                >Share &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</mat-radio-button
+              >
+              <mat-radio-button
+                value="CUSTOMER"
+                style="
+                  font-weight: bolder;
+                  height: 30px;
+                  padding-top: 2px;
+                  padding-bottom: 20px;  letter-spacing: 0.5px;font-weight:500;
+  color: rgb(226, 222, 222);
+  font-size: medium;
+                "
+                >Pool &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</mat-radio-button
+              >
+            </mat-radio-group>
+          </div>
+
+          <div>
+            <button
+              mat-button
+              matStepperNext
+              class="btn btn-primary"
+              style="
+                margin-left: 85%;
+                width: 10%;
+                font-weight: bolder;
+                font-size: 120%;
+                color: white;
+                background-color: #0fb081;
+
+                border-width: 1px;
+                margin-top: 20px;
+              "
+            [disabled]="firstFormGroup.invalid"
+            >
+      
+              Next
+            </button>
+            
+          </div>
+        </form>
+      </mat-step>
+      <mat-step [stepControl]="secondFormGroup"  label="Fill out your address">
+        <form [formGroup]="secondFormGroup">
+          <div class="form-group" style="margin-top: 10px">
+            <label
+              for="Address"
+              style="
+                font-weight: bolder;
+                margin-left: 0px;
+                margin-top: 15px;
+                position: absolute;
+              "
+              >Street Address :</label
+            >
+            <input
+              formControlName="streetAdd"
+              type="text"
+              class="form-control"
+              id="firstName"
+              aria-describedby="emailHelp"
+              placeholder="Street and number, P.O box "
+              style="
+                border-style: solid;
+                border-color: #0fb081;
+                border-width: 1px;
+                height: 50px;
+                width: 75%;
+                margin-left: 14%;
+              "
+            />
+          </div>
+          <div
+            class="form-group"
+            style="margin-left: 9.5%; margin-top: 45px; width: 100%"
+          >
+            <label
+              for="City"
+              style="
+                font-weight: bolder;
+                margin-left: -80px;
+                margin-top: 15px;
+                position: absolute;
+              "
+              >City :</label
+            >
+            <input
+              type="text"
+              formControlName="city"
+              class="form-control"
+              id="lastName"
+              placeholder="Enter City"
+              style="
+                border-style: solid;
+                border-color: #0fb081;
+                border-width: 1px;
+                height: 50px;
+                width: 30%;
+                margin-left: 32px;
+              "
+            />
+          </div>
+          <div
+            class="form-group"
+            style="margin-left: 55%; margin-top: -50px; width: 100%"
+          >
+            <label
+              style="
+                font-weight: bolder;
+                margin-left: -60px;
+                margin-top: 15px;
+                position: absolute;
+              "
+              >State :</label
+            >
+            <input
+              type="text"
+              formControlName="state"
+              class="form-control"
+              placeholder="Enter State"
+              style="
+                border-style: solid;
+                border-color: #0fb081;
+                border-width: 1px;
+                height: 50px;
+                width: 30%;
+              "
+            />
+          </div>
+          <div class="form-group" style="margin-top: 45px; margin-left: 102px">
+            <label
+              for="contactnumber"
+              style="
+                font-weight: bolder;
+                margin-left: -100px;
+                margin-top: 15px;
+                position: absolute;
+              "
+              >ZIP Code :</label
+            >
+            <input
+              type="tel"
+              formControlName="zipCode"
+              class="form-control"
+              id="zip"
+              placeholder="Enter area code"
+              style="
+                border-style: solid;
+                border-color: #0fb081;
+                border-width: 1px;
+                height: 50px;
+                width: 34.5%;
+              "
+            />
+          </div>
+          <div
+            class="form-group"
+            style="margin-left: 55%; margin-top: -50px; width: 100%"
+          >
+            <label
+              for="Country"
+              style="
+                font-weight: bolder;
+                margin-left: -60px;
+                position: absolute;
+                margin-top: 12px;
+              "
+              >Country :</label
+            >
+            <input
+              type="text"
+              formControlName="country"
+              class="form-control"
+              id="Country"
+              placeholder="Enter your Country"
+              style="
+                border-style: solid;
+                border-color: #0fb081;
+                border-width: 1px;
+                height: 50px;
+                width: 30%;
+              "
+            />
+          </div>
+
+          <div style="margin-top: 30px">
+            <button
+              mat-button
+              matStepperPrevious
+              class="btn btn-primary"
+              style="
+                width: 10%;
+                font-weight: bolder;
+                font-size: 120%;
+                color: white;
+                background-color: #0fb081;
+                border-width: 1px;
+                position: absolute;
+                margin-left: 50px;
+              "
+            >
+              Back
+            </button>
+            <button
+              mat-button
+              matStepperNext
+              class="btn btn-primary"
+              style="
+                margin-left: 85%;
+                width: 10%;
+                font-weight: bolder;
+                font-size: 120%;
+                color: white;
+                background-color: #0fb081;
+                border-width: 1px;
+              "
+              [disabled]="secondFormGroup.invalid"
+            >
+              Next
+            </button>
+          </div>
+        </form>
+      </mat-step>
+      <mat-step
+        [stepControl]="thirdFormGroup"
+        *ngIf="firstFormGroup.value.ownerOrUser === 'OWNER'"
+        label="Vehicle details"
+      >
+        <form
+          [formGroup]="thirdFormGroup"
+          style="margin-top: 8%; margin-left: 12%"
+        >
+          <div class="form-group" style="margin-top: 0px">
+            <label
+              for="vehicleName"
+              style="
+                font-weight: bolder;
+                margin-left: -100px;
+                margin-top: 15px;
+                position: absolute;
+              "
+              >Vehicle Name :</label
+            >
+            <input
+              formControlName="vehicleName"
+              type="text"
+              class="form-control"
+              id="firstName"
+              placeholder="Enter vehicle name"
+              style="
+                border-style: solid;
+                border-color: #0fb081;
+                border-width: 1px;
+                height: 50px;
+                width: 30%;
+              "
+            />
+          </div>
+          <div
+            class="form-group"
+            style="margin-left: 50%; margin-top: -50px; width: 100%"
+          >
+            <label
+              for="vehicleNumber"
+              style="
+                font-weight: bolder;
+                margin-left: -120px;
+                margin-top: 15px;
+                position: absolute;
+              "
+              >Vehicle Number :</label
+            >
+            <input
+              type="text"
+              formControlName="vehicleNumber"
+              class="form-control"
+              id="lastName"
+              placeholder="Enter vehicle Number"
+              style="
+                border-style: solid;
+                border-color: #0fb081;
+                border-width: 1px;
+                height: 50px;
+                width: 30%;
+              "
+            />
+          </div>
+          <div class="form-group" style="margin-top: 20px">
+            <label
+              style="
+                font-weight: bolder;
+                margin-left: -100px;
+                margin-top: 15px;
+                position: absolute;
+              "
+              >DL number :</label
+            >
+            <input
+              formControlName="drivingLicenseNumber"
+              type="text"
+              class="form-control"
+              placeholder="Enter your driving license number"
+              style="
+                border-style: solid;
+                border-color: #0fb081;
+                border-width: 1px;
+                height: 50px;
+                width: 30%;
+                margin-top: 40px;
+              "
+            />
+          </div>
+          <div
+            class="form-group"
+            style="margin-left: 50%; margin-top: -50px; width: 100%"
+          >
+            <label
+              style="
+              
+                font-weight: bolder;
+                margin-left: -120px;
+                margin-top: 15px;
+                position: absolute;
+              "
+              >Vehicle-Type :</label
+            >
+            <select
+              formControlName="vehicleType"
+              name="VehicleType"
+              class="form-control"
+              style="
+                border-style: solid;
+                border-color: #0fb081;
+                border-width: 1px;
+                height: 50px;
+                width: 30%;
+              "
+            >
+              <option value="SUV">SUV</option>
+              <option value="MUV">MUV</option>
+              <option value="Sedan">Sedan</option>
+              <option value="HatchBack">HatchBack</option>
+            </select>
+          </div>
+
+          <div style="margin-top: 70px">
+            <button
+              mat-button
+              matStepperPrevious
+              class="btn btn-primary"
+              style="
+                width: 10%;
+                font-weight: bolder;
+                font-size: 120%;
+                color: white;
+                background-color: #0fb081;
+                border-width: 1px;
+                position: absolute;
+              "
+            >
+              Back
+            </button>
+            <button
+              mat-button
+              matStepperNext
+              class="btn btn-primary"
+              style="
+                margin-left: 85%;
+                width: 10%;
+                font-weight: bolder;
+                font-size: 120%;
+                color: white;
+                background-color: #0fb081;
+                border-width: 1px;
+              "[disabled]="thirdFormGroup.invalid"
+            >
+              Next
+            </button>
+          </div>
+        </form>
+      </mat-step>
+      <mat-step>
+        <ng-template matStepLabel>Done</ng-template>
+        <h1 style="color: white;">We are done, let's add a profile photo!!</h1>
+        <div>
+          <form [formGroup]="fourthFormGroup" style="position: absolute">
+            <input
+              formControlName="fourthformgroup"
+              type="file"
+              (change)="onFileChanged($event)"
+           
+            />
+            <!-- preview -->
+            <img [src]="imgURL" height="100px" width="100px" *ngIf="imgURL" />
+            <!-- upload image -->
+            <button type="button" value="upload" (click)="onUpload()" style="width:auto;border: none;border-radius: 5px; padding: 8px;
+            font-weight: bolder;
+            font-size: 120%;
+            color: white;
+            margin-left: 15px;
+            background-color: #0fb081;">Upload</button>
+            <button 
+              style="
+              position:absolute;
+                left: 740px;
+                font-weight: bolder;
+                font-size: 120%;
+                color: white;
+                background-color: #0fb081;
+                border-width: 1px;
+              "
+              mat-button
+              (click)="stepper.reset()"
+            >
+              Reset
+            </button>
+          </form>
+        </div>
+        
+        <div style="margin-top: 32.5%">
+          <button
+            style="
+              width: 10%;
+              font-weight: bolder;
+              font-size: 120%;
+              color: white;
+              background-color: #0fb081;
+              border-width: 1px;
+              position: absolute;
+              margin-top: -30px;
+              margin-left: 50px;
+            "
+            mat-button
+            matStepperPrevious
+          >
+            Back
+          </button>
+          <button
+            (click)="save()"
+            style="
+              width: 10%;
+              font-weight: bolder;
+              font-size: 120%;
+              color: white;
+              background-color: #0fb081;
+              border-width: 1px;
+              position: absolute;
+              margin-left: 80%;
+              margin-top: -29px;
+            "
+            mat-button
+          >
+            Save
+          </button>
+        </div>
+      </mat-step>
+    </mat-stepper>
+  </div>
+</div>
+
+<!-- <app-main></app-main> -->

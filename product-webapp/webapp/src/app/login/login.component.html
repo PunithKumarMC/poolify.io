@@ -1,0 +1,119 @@
+<div style="position: fixed; width: 100%">
+  <div style="display: inline; height: 0px; position: absolute">
+    <img
+      src="../../assets/caaeaae00b5c49ddb022b25ff3548cc5__5_-removebg-preview.png"
+      alt="logo"
+      style="margin-top: -110px; width: 300px; margin-left: 5%"
+    />
+  </div>
+  <div>
+    <img
+      style="height:auto; width: 50%; margin-top: -190px"
+      src="../../assets/login.jpg"
+      alt="loginPageBackground"
+      class="responsive"
+    />
+  </div>
+  <div style="margin-left: 60%; margin-top:-700px">
+    <span
+      ><h1
+        style="
+          font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial,
+            sans-serif;
+          font-size: 40px;
+        "
+      >
+        Login to your account !
+      </h1></span
+    ><br />
+    <!-- <span>
+      <img
+        src="../../assets/google_logo.png"
+        style="height: 40px; margin-left: 100px"
+      />
+    </span> -->
+    <br /><br /><br />
+    <form [formGroup]="registerform" style="margin-right: 0px">
+      <div class="form-group" style="margin-right: 30%">
+        <input
+          type="email"
+          class="form-control"
+          id="exampleInputEmail1"
+          aria-describedby="emailHelp"
+          placeholder="Enter email"
+          formControlName="email"
+          style="
+            border-style: solid;
+            border-color: #0fb081;
+            border-width: 1px;
+            height: 50px;
+          "
+        />
+        <div *ngIf="registerform.controls['email'].hasError('pattern')">
+          invalid format
+        </div>
+
+        <small id="emailHelp" class="form-text text-muted"
+          >We'll never share your email with anyone else.</small
+        >
+      </div>
+      <div class="form-group" style="margin-right: 30%">
+        <input
+          type="password"
+          class="form-control"
+          id="exampleInputPassword1"
+          placeholder="Password"
+          formControlName="password"
+          style="
+            border-style: solid;
+            border-color: #0fb081;
+            border-width: 1px;
+            height: 50px;
+          "
+        />
+      </div>
+      <div *ngIf="registerform.controls['password'].hasError('minlength')">
+        password min length Required i.e 6
+      </div>
+      <div *ngIf="registerform.controls['password'].hasError('maxlength')">
+        password max length Required i.e 12
+      </div>
+      <br />
+
+      <button
+        type="submit"
+        class="btn btn-primary"
+        style="
+          width: 70%;
+          background-color: #0fb081;
+          height: 50px;
+          font-weight: bold;
+          font-size: 20px;
+          font-family: sans-serif;
+        "
+        (click)="onLogin()"
+     
+        
+        [disabled]="
+          registerform.value.email === '' ||
+          registerform.value.password === '' ||
+          registerform.controls['password'].hasError('minlength') ||
+          registerform.controls['password'].hasError('maxlength')
+        "
+      >
+        Login
+      </button>
+      <div style="font-weight:bolder;color:rgb(182, 46, 46)">{{this.error}}</div>
+    </form>
+    <br />
+    <span>
+      <a
+        routerLink="/register"
+       
+        ariaCurrentWhenActive="page"
+        style="margin-left: 100px; font-size: 20px"
+        >Not registered? Register!</a
+      ></span
+    >
+  </div>
+</div>

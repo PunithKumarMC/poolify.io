@@ -1,0 +1,26 @@
+input{
+  background-color:rgb(230, 230, 230)!important;
+  margin-left: 10px;
+  }
+select{
+  /* background-color:#a5dac5!important; */
+  background-color:rgb(230, 230, 230)!important;
+  color: rgb(0, 0, 0)!important;
+  font-size: medium!important;
+  font-weight:500!important;
+  }
+  button{
+    background-color: #5ee3bb;
+}
+
+.mat-step-icon-selected {
+  background-color: red !important;
+  color: red !important;
+}
+
+label{
+  font-weight:500!important;
+  letter-spacing: 0.5px;
+  color: rgb(226, 222, 222);
+  font-size: medium;
+}

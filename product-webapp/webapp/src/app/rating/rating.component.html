@@ -1,0 +1,43 @@
+<div class="body" id="mainscreen">
+  <div class="wrapper">
+   
+     
+    <input type="radio" name="rate" [(ngModel)]="rating" id="star-1" value="1">
+    <input type="radio" name="rate" [(ngModel)]="rating" id="star-2" value="2">
+    <input type="radio" name="rate" [(ngModel)]="rating" id="star-3" value="3">
+    <input type="radio" name="rate" [(ngModel)]="rating" id="star-4" value="4">
+    <input type="radio" name="rate" [(ngModel)]="rating" id="star-5" value="5">
+  
+    <div class="content">
+      <div class="outer">
+        <div class="emojis">
+          <li class="slideImg"><img src="assets\Emoji Stars Rating Widget\emojis\emoji-1-removebg-preview.png" alt=""></li>
+          <li><img src="assets\Emoji Stars Rating Widget\emojis\happy (1).png" alt=""></li>
+          <li><img src="assets\Emoji Stars Rating Widget\emojis\emoji-3.png" alt=""></li>
+          <li><img src="assets\Emoji Stars Rating Widget\emojis\star (1).png" alt=""></li>
+          <li><img src="assets\Emoji Stars Rating Widget\emojis\emoji-4-removebg-preview.png" alt=""></li>
+        </div>
+      </div>
+      <div class="stars">
+        <!-- <label  for="star-1"><img style="width: 10px; height: 10px;" src="assets\Emoji Stars Rating Widget\emojis\emoji-5.png" alt=""></label> -->
+        <label for="star-1"><img style="width: 20px; height: 20px; margin-right: 4px;" src="assets\Emoji Stars Rating Widget\emojis\emoji-1-removebg-preview.png" alt=""></label> 
+        <label for="star-2"><img style="width: 20px; height: 20px; margin-right: 4px ;" src="assets\Emoji Stars Rating Widget\emojis\happy (1).png" alt=""></label>
+        <label for="star-3"><img style="width: 20px; height: 20px; margin-right: 4px;" src="assets\Emoji Stars Rating Widget\emojis\emoji-3.png" alt=""></label>
+        <label for="star-4"><img style="width: 20px; height: 20px; margin-right: 4px;" src="assets\Emoji Stars Rating Widget\emojis\star (1).png" alt=""></label>
+        <label for="star-5"><img style="width: 20px; height: 20px; " src="assets\Emoji Stars Rating Widget\emojis\emoji-4-removebg-preview.png" alt=""></label> 
+        <!-- <i class="fa fa-star"></i> -->
+      </div>
+    </div>
+    <div class="footer">
+      <span class="text" style="color: black;"></span>
+      <span class="numb" style="color: black;"></span>
+    </div>
+
+    <form action="submit" method="post">
+      <div class="btn">
+        <button type="button" onclick="alert('Thank you for Rating your Ride!')" (click)="ratingValue()">Post</button>
+      </div>
+    </form>
+  </div>
+</div>
+ 

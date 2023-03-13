@@ -1,0 +1,40 @@
+#dialog:target {
+    transform: scale(1);
+  }
+  #dialog-content {
+    width: 50%;
+    height:50%;
+    position: absolute;
+    top: 25%;
+    left: 25%;
+    margin-left: 0px;
+    background: linear-gradient(135deg, #01C278 0%, #D9D9D9 100%);
+    border: 1px solid #ccc;
+  }
+  #dialog-text {
+    margin: 1.5em 0;
+    text-align: center;
+    text-transform: uppercase;
+  }
+  #dialog-actions {
+    padding-bottom: 1.5em;
+    text-align: center;
+  }
+  #dialog-actions button {
+    margin-right: 3em;
+    margin-top:5%;
+    background:linear-gradient(135deg, #01C278 0%, #D9D9D9 100%);
+    border-radius: 80px;
+    font-size: 1em;
+    padding: 0;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  .icon1{
+    width:150px;
+    height:150px;
+  }
+  .icon1:hover {
+    transform: scale(1.05) translateY(-5px);
+    box-shadow: 3px 3px 6px #04000085;
+  }
