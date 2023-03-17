@@ -25,7 +25,7 @@ import java.util.Optional;
 
 @Service
 public class GeoLocationServiceImpl implements GeoLocationService {
-    private static final Object API_KEY = "AIzaSyD_WlmvBEH6wDTs7cvKA1795kVPKF6xNiE";
+    private static final Object API_KEY = "";
     private DistPlacesNamesRepository distPlacesNamesRepository;
     private GeoLocationRepository geoLocationRepository;
     private UserBookingRepository userBookingRepository;
